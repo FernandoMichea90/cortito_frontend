@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: #ffffff;
+  --background-start-rgb: #030031;
+  --background-end-rgb: #030031;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb-Regular';
+  src: url('/Tipografia/TitilliumWeb-Regular.ttf')format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +24,9 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-rgb);
+  background: var(--background-start-rgb);
+  font-family: 'TitilliumWeb-Regular' !important;
 }
 
 @layer utilities {
