@@ -12,6 +12,7 @@ const config: Config = {
       colors: {
         blanco: 'var(--foreground-rgb)',
         azul: 'var(--background-start-rgb)',
+        gris: 'var(--background-gris-rgb)',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
