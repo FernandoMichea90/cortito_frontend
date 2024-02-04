@@ -1,7 +1,9 @@
 'use client'
+import Footer from "@/section/Footer";
+import Header from "@/section/Header";
 import Acortador from "@/section/Home/Acortador";
+import Estadisticas from "@/section/Home/Estadisticas";
 import Intro from "@/section/Home/Intro";
-import Image from "next/image";
 
 export default function Home() {
 
@@ -18,12 +20,18 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
+    <>    
+    <main className="flex  flex-col items-center justify-between">
       <Intro />
+
       <div className='mt-[100vh]'>
-          {renderPolygon()}
+        {renderPolygon()}
       </div>
-      <Acortador />
+      <div className="w-full z-10 bg-blanco">
+        <Acortador />
+        <Estadisticas />
+      </div>
     </main>
+    </>
   );
 }
