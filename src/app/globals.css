@@ -18,9 +18,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: #ffffff;
+    --background-start-rgb: #030031;
+    --background-end-rgb: #030031;
+    --background-gris-rgb: #e8e9eb;
   }
 }
 
@@ -41,9 +42,12 @@ body {
 }
 
 @keyframes subirBajar {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -79,18 +83,21 @@ body {
 }
 
 .op-blanco-0 {
-  background-color:#ffffff00;
+  background-color: #ffffff00;
 }
+
 .op-blanco-25 {
-  background-color:#ffffff2c;
+  background-color: #ffffff2c;
 }
+
 .op-blanco-50 {
-  background-color:#ffffff31;
+  background-color: #ffffff31;
 }
 
 .op-blanco-75 {
-  background-color:#ffffffbf;
+  background-color: #ffffffbf;
 }
+
 .op-blanco-100 {
-  background-color:#ffffff;
+  background-color: #ffffff;
 }

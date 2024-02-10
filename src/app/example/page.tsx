@@ -1,6 +1,4 @@
-'use client'
-import Footer from "@/section/Footer";
-import Header from "@/section/Header";
+
 import Acortador from "@/section/Home/Acortador";
 import Estadisticas from "@/section/Home/Estadisticas";
 import Intro from "@/section/Home/Intro";
