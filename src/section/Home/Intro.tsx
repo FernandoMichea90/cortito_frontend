@@ -19,8 +19,8 @@ export default function Intro() {
 
   return (
     <div className='fixed top-0 left-0'>
-      <div>
-        <div className="flex flex-col items-center justify-center h-screen w-screen bg-primary">
+      <div className='bg-azul'>
+        <div className="flex flex-col items-center justify-center h-screen w-screen bg-azul">
           <div className='w-[600px] h-[600px] animar-subir-bajar'>
             <img
               src="/cortito.png"
