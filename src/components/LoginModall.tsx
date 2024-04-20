@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Modal, Box, Button } from '@mui/material';
-import GoogleIcon from '@mui/icons-material/Google';
+import { GOOGLE_CLIENT_ID} from "@/config_global";
 
 
 
@@ -17,29 +17,15 @@ const ImageBackgroundLoginModal: React.FC<Props> = ({ open, handleClose }) => {
     const width = 500;
     const height = 600;
 
-    // Calcula las coordenadas para centrar el popup en la pantalla
-    const left = window.screen.width / 2 - width / 2;
-    const top = window.screen.height / 2 - height / 2;
-
+ 
 
     // Función para manejar el inicio de sesión con Google
     const handleGoogleSignIn = () => {
         // URL de autorización de Google
-        const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=276581705346-vjimpko04q6qh7e1l0gcsb435prgh0ek.apps.googleusercontent.com&redirect_uri=http://localhost:3000&response_type=token&scope=email%20profile`;
-
-        // Abre una nueva ventana para la autenticación de Google
-        // const popup = window.open(authUrl, '_blank', 'width=500,height=600');
-        const popup = window.open(authUrl, '_blank', `width=${width},height=${height},left=${left},top=${top}`);
-
-
-        // Verifica si la ventana de autenticación se cierra
-        const interval = setInterval(() => {
-            if (popup?.closed) {
-                clearInterval(interval);
-                // Realiza alguna acción después de cerrar la ventana de autenticación (por ejemplo, actualiza la página para verificar la autenticación)
-                // window.location.reload();
-            }
-        }, 1000);
+        const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=http://localhost:3000/login&response_type=token&scope=email%20profile`;
+        // Redirige al usuario a la URL de autorización de Google en la misma ventana
+        window.location.href = authUrl;
+       
     };
 
 

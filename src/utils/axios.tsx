@@ -1,24 +1,24 @@
 import axios from "axios";
-import { HOST_API,USER_API,PASSWORD_API } from "@/config_global";
+import { HOST_API, USER_API, PASSWORD_API } from "@/config_global";
 
+// Get user credentials from environment variables or configuration
+const user = USER_API;
+const password = PASSWORD_API;
 
+// Get token from localStorage
+const access_token = localStorage.getItem('token');
 
-
-let user = USER_API;
-let password = PASSWORD_API;
-
-
-
+// Create axios instance with baseURL and headers
 export const api = axios.create({
   baseURL: HOST_API,
   headers: {
     "Content-Type": "application/json",
-    "Authorization": "Basic " + btoa(`${user}:${password}`),
+    "Authorization": `Bearer ${access_token}`,
   },
 });
 
-
+// Define endpoints
 export const endpoints = {
-//crear shroturl
- crearShortUrl: "/shorturl",
+  // Endpoint to create short URL
+  crearShortUrl: "/shorturl",
 };
