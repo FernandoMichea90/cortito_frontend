@@ -28,4 +28,6 @@ export const api = axios.create({
 export const endpoints = {
   // Endpoint to create short URL
   crearShortUrl: "/shorturl",
+  //auth with google
+  authwithgoogle:"/authgoogle"
 };
