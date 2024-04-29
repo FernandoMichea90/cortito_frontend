@@ -6,7 +6,14 @@ const user = USER_API;
 const password = PASSWORD_API;
 
 // Get token from localStorage
-const access_token = localStorage.getItem('token');
+
+var access_token:string|null=null;
+try{
+
+  access_token = localStorage.getItem('token');
+}catch(e){
+  console.log("access_token no definido")
+}
 
 // Create axios instance with baseURL and headers
 export const api = axios.create({
@@ -21,4 +28,6 @@ export const api = axios.create({
 export const endpoints = {
   // Endpoint to create short URL
   crearShortUrl: "/shorturl",
+  //auth with google
+  authwithgoogle:"/authgoogle"
 };
