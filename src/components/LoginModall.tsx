@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Modal, Box, Button } from '@mui/material';
 import { GOOGLE_CLIENT_ID} from "@/config_global";
+import { api, endpoints } from '@/utils/axios';
+import { path } from '@/utils/path';
+import { PATH_SHORT_URL } from '@/api/path';
 
 
 
@@ -20,9 +23,17 @@ const ImageBackgroundLoginModal: React.FC<Props> = ({ open, handleClose }) => {
  
 
     // Función para manejar el inicio de sesión con Google
-    const handleGoogleSignIn = () => {
+    const handleGoogleSignIn = async() => {
+
+        // try{
+        //     const response = await  api.get(PATH_SHORT_URL.authGoogle())
+
+        // }catch(ex){
+        //     console.log(ex);
+        // }
         // URL de autorización de Google
-        const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=http://localhost:3000/login&response_type=token&scope=email%20profile`;
+        const authUrl =endpoints.authwithgooleserver
+        alert(authUrl);
         // Redirige al usuario a la URL de autorización de Google en la misma ventana
         window.location.href = authUrl;
        

@@ -29,5 +29,7 @@ export const endpoints = {
   // Endpoint to create short URL
   crearShortUrl: "/shorturl",
   //auth with google
-  authwithgoogle:"/authgoogle"
+  authwithgoogle:"/authgoogle",
+  // auth with google server
+  authwithgooleserver:HOST_API+'/api/authgoogle',
 };
