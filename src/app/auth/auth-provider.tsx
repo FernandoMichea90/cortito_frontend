@@ -1,9 +1,6 @@
 'use client';
 import React, { useCallback, useEffect, ReactNode, use } from "react";
 import { AuthContext } from "./auth-context";
-import { GOOGLE_CLIENT_ID, GOOGLE_SECRET_ID} from "@/config_global";
-import { act } from "react-dom/test-utils";
-import { access } from "fs";
 
 
 
@@ -68,6 +65,7 @@ const getTokenFromUrl = (search: string) => {
 export const AuthProvider: React.FC<Props> = ({ children }) => {
     const [state, dispatch] = React.useReducer(reducer, initialState);
 
+
     const initialize = useCallback(() => {
         const user = localStorage.getItem("user");
         const token = localStorage.getItem("token");
@@ -119,7 +117,12 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
                     type: "LOGIN",
                     payload: { user: userData, token: tokenFromUrl },
                 });
+                return true;
+            }).then((response)=>{
+                console.log('fetch user data '+response)
+                window.location.href="http://localhost:3000/example";
             });
+
         } else {
             initialize();
         }
