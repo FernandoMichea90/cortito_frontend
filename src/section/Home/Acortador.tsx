@@ -36,7 +36,7 @@ export default function Acortador() {
           setUrl(PUBLIC_URL+"/"+response.data.short_url);
         } else {
           // La solicitud no fue exitosa, mostrar un mensaje de error
-          alert('Hubo un error al crear la URL corta');
+        console.log('Hubo un error al crear la URL corta');
         }
       })
       .catch(error => {
@@ -48,7 +48,7 @@ export default function Acortador() {
           Object.keys(validationErrors).forEach(field => {
             errorMessage += `\n${field}: ${validationErrors[field][0]}`;
           });
-          alert(errorMessage);
+          console.log(errorMessage);
         } else {
           // Si el error no está en el formato esperado, mostrar un mensaje genérico
           alert('Hubo un error al procesar la solicitud');

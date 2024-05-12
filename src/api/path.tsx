@@ -5,8 +5,19 @@ const  ROOT_PATH_SHORT_URL='/api/shorturls';
 
 const endpoints={
     authGoogle:'/authgoogle',
+    refreshToken:'/refreshtoken'
 }
 export const PATH_SHORT_URL={
+    // crear short url 
     crearRuta:()=>path(ROOT_PATH_SHORT_URL),
-    authGoogle:()=>path(ROOT_PATH,endpoints.authGoogle)
+    // autentificacion google
+    authGoogle(redirect_url: string | null = null) {
+        let url = path(ROOT_PATH, endpoints.authGoogle);
+        if (redirect_url) {
+          url += `?view=0&redirect_url=${redirect_url}`;
+        }
+        return url;
+      },
+    // refresh token
+    refreshToken:(access_token:string)=>path(ROOT_PATH,endpoints.refreshToken+'?refresh_token='+access_token)
 }
