@@ -35,30 +35,23 @@ const api = axios.create({
 
 api.interceptors.request.use(
   async (config) => {
-    console.log('paso por el interceptor');
-    console.log(config);
-
+   
     if (access_token) {
       if (!isRefreshing) {
         isRefreshing = true
         try {
           const response = await api.get(path.refreshToken(access_token));
-          console.log('Éxito al refrescar el token');
-          console.log(response);
-
+        
           // Actualizar el token en los headers de la solicitud
-          config.headers['Authorization'] = `Bearer ${response.data.access_token}`;
-          console.log('no hay error');
+          config.headers['Authorization'] = `Bearer ${response.data.token}`;
+          localStorage.setItem("token", JSON.stringify(response.data.token));
         } catch (error) {
-          console.log('Error  al refrescar el token');
+           console.log('Error  al refrescar el token');
 
           const currentPath = window.location.pathname;
 
           // tengo que enviar la ruta actual 
           const response= await api.get(path.authGoogle(currentPath))
-          console.log("Ruta actual:"+ response.data);
-          console.log('Error al refrescar el token');
-          console.log(error);
           let url=response.data
           window.location.href=url
 

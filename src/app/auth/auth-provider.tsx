@@ -117,9 +117,12 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
                     type: "LOGIN",
                     payload: { user: userData, token: tokenFromUrl },
                 });
+                return true;
+            }).then((response)=>{
+                console.log('fetch user data '+response)
+                window.location.href="http://localhost:3000/example";
             });
 
-            window.location.href="http://localhost:3000/example";
         } else {
             initialize();
         }

@@ -19,5 +19,10 @@ export const PATH_SHORT_URL={
         return url;
       },
     // refresh token
-    refreshToken:(access_token:string)=>path(ROOT_PATH,endpoints.refreshToken+'?refresh_token='+access_token)
+    refreshToken:(access_token:string)=>path(ROOT_PATH,endpoints.refreshToken+'?token='+access_token),
+    authwithgooleserver:()=>path(ROOT_PATH,'/authgoogle?view=TRUE')
+    
+}
+
+export const PATH_LOCAL_HOST={
 }

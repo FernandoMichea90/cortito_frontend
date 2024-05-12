@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Modal, Box, Button } from '@mui/material';
-import { GOOGLE_CLIENT_ID} from "@/config_global";
+import { GOOGLE_CLIENT_ID, HOST_API} from "@/config_global";
 import { api, endpoints } from '@/utils/axios';
 import { path } from '@/utils/path';
 import { PATH_SHORT_URL } from '@/api/path';
@@ -32,8 +32,9 @@ const ImageBackgroundLoginModal: React.FC<Props> = ({ open, handleClose }) => {
         //     console.log(ex);
         // }
         // URL de autorización de Google
-        const authUrl =endpoints.authwithgooleserver
-        alert(authUrl);
+        const authUrl = HOST_API+PATH_SHORT_URL.authwithgooleserver();
+        
+        
         // Redirige al usuario a la URL de autorización de Google en la misma ventana
         window.location.href = authUrl;
        
