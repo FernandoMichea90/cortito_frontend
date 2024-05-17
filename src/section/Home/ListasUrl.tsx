@@ -1,4 +1,5 @@
-import LinkCard from '@/components/LinkCards'
+import LinkCard from '@/components/LinkCard'
+import LinkCards from '@/components/LinkCards'
 import React from 'react'
 
 const ListasUrl = () => {
@@ -13,8 +14,7 @@ const ListasUrl = () => {
       {/* list Short Urls */}
       <div className='relative mb-[100px] w-[80vw] pt-[20px] pb-[20px]'>
       
-      <LinkCard></LinkCard>
-
+      <LinkCards></LinkCards>
       </div>
     </div>
 

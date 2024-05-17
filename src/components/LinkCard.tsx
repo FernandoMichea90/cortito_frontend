@@ -8,7 +8,7 @@ interface Props{
 const LinkCard:React.FC<Props> = ({shorturl}) => {
   
   return (
-    <div className="w-full sm:w-[48%] border shadow rounded h-[150px] p-[13px] mb-4 relative flex justify-start">
+    <>
     {/* Icono de arrastrar */}
     <svg className="absolute right-0 top-0 w-4 h-4 cursor-move m-[10px]">
       {/* Inserta aquí el código SVG para el icono de arrastrar */}
@@ -35,7 +35,8 @@ const LinkCard:React.FC<Props> = ({shorturl}) => {
       <LinkChart></LinkChart>
       
     </div>
-  </div>
+    </>
+  
   )
 }
 
