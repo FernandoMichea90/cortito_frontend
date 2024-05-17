@@ -2,6 +2,7 @@
 import Acortador from "@/section/Home/Acortador";
 import Estadisticas from "@/section/Home/Estadisticas";
 import Intro from "@/section/Home/Intro";
+import ListasUrl from "@/section/Home/ListasUrl";
 
 export default function Home() {
 
@@ -27,7 +28,7 @@ export default function Home() {
       </div>
       <div className="w-full z-10 bg-blanco">
         <Acortador />
-        <Estadisticas />
+        <ListasUrl />
       </div>
     </main>
     </>

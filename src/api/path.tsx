@@ -5,7 +5,8 @@ const  ROOT_PATH_SHORT_URL='/api/shorturls';
 
 const endpoints={
     authGoogle:'/authgoogle',
-    refreshToken:'/refreshtoken'
+    refreshToken:'/refreshtoken',
+    getShortUrls:'/shorturls'
 }
 export const PATH_SHORT_URL={
     // crear short url 
@@ -20,7 +21,8 @@ export const PATH_SHORT_URL={
       },
     // refresh token
     refreshToken:(access_token:string)=>path(ROOT_PATH,endpoints.refreshToken+'?token='+access_token),
-    authwithgooleserver:()=>path(ROOT_PATH,'/authgoogle?view=TRUE')
+    authwithgooleserver:()=>path(ROOT_PATH,'/authgoogle?view=TRUE'),
+    getShortUrls:()=>path(ROOT_PATH,endpoints.getShortUrls)
     
 }
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Modal, Box, Button } from '@mui/material';
 import { GOOGLE_CLIENT_ID, HOST_API} from "@/config_global";
-import { api, endpoints } from '@/utils/axios';
+import { api } from '@/utils/axios';
 import { path } from '@/utils/path';
 import { PATH_SHORT_URL } from '@/api/path';
 
